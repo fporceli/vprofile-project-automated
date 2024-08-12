@@ -30,8 +30,10 @@ Vagrant.configure("2") do |config|
   config.vm.define "rmq01" do |rmq01|
     rmq01.vm.box = "eurolinux-vagrant/centos-stream-9"
     rmq01.vm.box_version = "9.0.43"
-    rmq01.vm.hostname = "rmq01"
     rmq01.vm.network "private_network", ip: "192.168.56.13"
+    rmq01.vm.hostname = "rmq01"
+    #Rodar o provisionamento do rabbitmq.sh
+    rmq01.vm.provision "shell", path: "rabbitmq.sh"
     rmq01.vm.provider "virtualbox" do |vb|
      vb.memory = "600"
    end

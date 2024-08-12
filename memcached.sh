@@ -11,7 +11,7 @@ sudo dnf install memcached -y
 sudo systemctl start memcached
 sudo systemctl enable memcached
 sudo systemctl status memcached
-sed -i 's/127.0.0.1/0.0.0.0/g' /etc/sysconfig/memcached
+sudo sed -i 's/127.0.0.1/0.0.0.0/g' /etc/sysconfig/memcached
 sudo systemctl restart memcached
 
 #PT-BR: Inicializando o firewall e habilitando a porta 11211 acessar o memcached
@@ -19,3 +19,6 @@ sudo systemctl restart memcached
 
 sudo firewall-cmd --add-port=11211/tcp
 sudo firewall-cmd --runtime-to-permanent
+sudo firewall-cmd --add-port=11111/udp
+sudo firewall-cmd --runtime-to-permanent
+sudo memcached -p 11211 -U 11111 -u memcached -d
