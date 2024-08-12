@@ -43,8 +43,10 @@ Vagrant.configure("2") do |config|
    config.vm.define "app01" do |app01|
     app01.vm.box = "eurolinux-vagrant/centos-stream-9"
     app01.vm.box_version = "9.0.43"
-    app01.vm.hostname = "app01"
     app01.vm.network "private_network", ip: "192.168.56.12"
+    app01.vm.hostname = "app01"
+    #Rodar o provisionamento do tomcat.sh
+    app01.vm.provision "shell", path: "tomcat.sh"
     app01.vm.provider "virtualbox" do |vb|
      vb.memory = "800"
    end

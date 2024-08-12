@@ -1,6 +1,7 @@
 #!/bin/bash
 #PT-BR: Instalação de pacotes dependentes
 #EN: Installing dependent packages
+
 sudo yum update -y
 sudo dnf install epel-release -y
 sudo dnf install memcached -y

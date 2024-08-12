@@ -1,6 +1,7 @@
 #!/bin/bash
 #PT-BR: Instalação de pacotes dependentes
 #EN: Installing dependent packages
+
 password_db='admin123'
 sudo yum update -y
 sudo yum install epel-release -y
