@@ -13,13 +13,12 @@
 
 ![](https://i.ibb.co/nkG6FWt/Screenshot-2024-08-14-004253.png)
 
-[========]
 
 #### Dependences
 - Oracle VM Virtualbox
 - Vagrant
 - Git bash or equivalent editor
 - Vagrant plugins
-###### Execute below command in your computer to install hostmanager plugin
+#### Execute below command in your computer to install hostmanager plugin
 `$ vagrant plugin install vagrant-hostmanager`
 
