@@ -30,6 +30,19 @@ sudo systemctl daemon-reload
 sudo systemctl start tomcat
 sudo systemctl enable tomcat
 
+#PT-BR: Criação e implementação do código
+#EN: Code build and deploy
+
+sudo git clone -b main https://github.com/hkhcoder/vprofile-project.git
+cd vprofile-project
+sudo mvn install
+sudo systemctl stop tomcat
+sudo rm -rf /usr/local/tomcat/webapps/ROOT*
+sudo cp target/vprofile-v2.war /usr/local/tomcat/webapps/ROOT.war
+sudo systemctl start tomcat
+sudo chown tomcat.tomcat /usr/local/tomcat/webapps -R
+sudo systemctl restart tomcat
+
 #PT-BR: Iniciando o firewall e habilitando a porta 8080 para para o Tomcat
 #EN: Enabling the firewall and allowing port 8080 to access the tomcat
 

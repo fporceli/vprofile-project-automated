@@ -40,7 +40,6 @@ sudo systemctl restart mysql
 sudo mysql -e "CREATE DATABASE accounts;" -p$password_db
 sudo mysql -e "GRANT ALL PRIVILEGES ON accounts.* TO 'admin'@'%' IDENTIFIED BY '$password_db';" -p$password_db
 sudo mysql -e "FLUSH PRIVILEGES;" -p$password_db
-exit
 
 #PT-BR: Baixar código fonte e iniciar base de dados
 #EN: Download source code and initialize database
